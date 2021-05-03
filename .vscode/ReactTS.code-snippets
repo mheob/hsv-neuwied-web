@@ -1,0 +1,14 @@
+{
+  "React functional component": {
+    "scope": "typescriptreact",
+    "prefix": "rfc",
+    "body": [
+      "type Props = {};",
+      "",
+      "export default function ${TM_FILENAME_BASE}({}: Props) {",
+      "  return (${0});",
+      "}"
+    ],
+    "description": "React functional component"
+  }
+}

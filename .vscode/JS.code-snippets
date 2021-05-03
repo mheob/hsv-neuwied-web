@@ -1,0 +1,34 @@
+{
+  "Inserts a noop function": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "noop",
+    "body": ["() => {${0}};"],
+    "description": "Inserts a noop function"
+  },
+  "Inserts console.groupCollapsed('<label>')": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "cgc",
+    "body": ["console.groupCollapsed(\"${1}\");", "console.log(\"${2}\");", "console.groupEnd();"],
+    "description": "Inserts console.groupCollapsed('<label>')"
+  },
+  "Arrow Function": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "af",
+    "body": ["const ${1:functionName} = (${2}) => ${3};"],
+    "description": "Arrow Function"
+  },
+  "Inline Arrow Function": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "iaf",
+    "body": ["(${1}) => ${2}"],
+    "description": "Inline Arrow Function"
+  },
+  "Array Methods": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "am",
+    "body": [
+      "${2}.${1|map,filter,indexOf,findIndex,forEach,reduce,some,find|}((${3:item}) => ${4});"
+    ],
+    "description": "Array Methods"
+  }
+}
