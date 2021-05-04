@@ -2,15 +2,38 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "npm",
-      "script": "dev",
-      "problemMatcher": [],
-      "label": "npm: dev",
-      "detail": "npm run dev",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
+      "label": "Develoment watch",
+      "type": "shell",
+      "command": "/bin/sh -c \"npm run install && npm run watch\"",
+      "group": "build",
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "Production build",
+      "type": "shell",
+      "command": "/bin/sh -c \"npm run install && npm run production\"",
+      "group": "build",
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "docker up",
+      "type": "shell",
+      "command": "/bin/sh -c \"docker compose up -d\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "docker build",
+      "type": "shell",
+      "command": "/bin/sh -c \"docker compose -d --build\"",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "args",
+      "description": "arguments",
+      "default": "",
+      "type": "promptString"
     }
   ]
 }

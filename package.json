@@ -22,10 +22,10 @@
     "lint:style": "stylelint **/*.{css,scss,js,ts,tsx} --ignore-path ./config/.stylelintignore",
     "prepare": "husky install ./config/husky",
     "start": "next start",
-    "test": "jest",
-    "test:cov": "jest --coverage",
-    "test:cy": "cypress open",
-    "test:watch": "jest --watch -u",
+    "test": "jest --config=config/jest.config.js",
+    "test:cov": "jest --config=config/jest.config.js --coverage",
+    "test:cy": "cypress open --config-file config/cypress.json",
+    "test:watch": "jest --config=config/jest.config.js --watch -u",
     "type-check": "tsc --pretty --noEmit"
   },
   "babel": {
