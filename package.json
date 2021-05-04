@@ -22,10 +22,10 @@
     "lint:style": "stylelint **/*.{css,scss,js,ts,tsx} --ignore-path ./config/.stylelintignore",
     "prepare": "husky install ./config/husky",
     "start": "next start",
-    "test": "jest --config=config/jest.config.js",
-    "test:cov": "jest --config=config/jest.config.js --coverage",
+    "test": "jest",
+    "test:cov": "jest --coverage",
     "test:cy": "cypress open --config-file config/cypress.json",
-    "test:watch": "jest --config=config/jest.config.js --watch -u",
+    "test:watch": "jest --watch -u",
     "type-check": "tsc --pretty --noEmit"
   },
   "babel": {
@@ -74,6 +74,7 @@
     "import-sort": "^6.0.0",
     "import-sort-parser-typescript": "^6.0.0",
     "jest": "^26.6.3",
+    "jest-styled-components": "^7.0.4",
     "jest-watch-typeahead": "^0.6.3",
     "prettier": "^2.2.1",
     "stylelint": "^13.13.1",
@@ -95,5 +96,15 @@
       "style": "module",
       "options": {}
     }
+  },
+  "wallaby": {
+    "autoDetect": true,
+    "files": [
+      "src/**/*.[jt]s?(x)",
+      "!src/**/*.spec.[jt]s?(x)"
+    ],
+    "tests": [
+      "src/**/*.spec.[jt]s?(x)"
+    ]
   }
 }
