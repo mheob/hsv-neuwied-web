@@ -1,0 +1,9 @@
+import { render, testA11y } from '~/test-utils'
+
+import { {{name}} } from './{{filename}}'
+
+describe('{{name}} component', () => {
+  it('passes a11y test', async () => {
+    await testA11y(<{{name}} />)
+  })
+})

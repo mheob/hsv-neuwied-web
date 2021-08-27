@@ -8,7 +8,6 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals",
-    "plugin:testing-library/react",
     "plugin:unicorn/recommended",
     "plugin:prettier/recommended"
   ],
@@ -18,6 +17,13 @@
       { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
     ],
     "no-console": ["warn", { "allow": ["warn", "error"] }],
-    "unicorn/prevent-abbreviations": ["error", { "replacements": { "props": false } }]
-  }
+    "unicorn/prevent-abbreviations": ["error", { "replacements": { "props": false } }],
+    "unicorn/prefer-node-protocol": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ]
 }
