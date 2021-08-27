@@ -1,0 +1,23 @@
+{
+  "root": true,
+  // TODO: Remove if not needed
+  // "parser": "@typescript-eslint/parser",
+  // "plugins": ["@typescript-eslint", "testing-library", "unicorn"],
+  // "plugins": ["unicorn"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals",
+    "plugin:testing-library/react",
+    "plugin:unicorn/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "unicorn/prevent-abbreviations": ["error", { "replacements": { "props": false } }]
+  }
+}

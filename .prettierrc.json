@@ -1,0 +1,15 @@
+{
+  "printWidth": 100,
+  "proseWrap": "always",
+  "singleQuote": true,
+  "semi": true,
+  "overrides": [
+    {
+      "files": "*.{yaml,yml}",
+      "options": {
+        "printWidth": 130,
+        "singleQuote": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches-ignore: ["main"]
+
+jobs:
+  ci:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Enable node
+        uses: actions/setup-node@master
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint types and code
+        run: npm run lint
+
+      # - name: Run jest
+      #   env:
+      #     CI: true
+      #     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NODE_ICU_DATA: node_modules/full-icu
+      #   run: npm run test:ci:cov
+
+      # - name: Upload coverage to Codecov
+      #   uses: codecov/codecov-action@v1
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
